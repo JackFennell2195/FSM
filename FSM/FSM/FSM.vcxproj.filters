@@ -27,6 +27,18 @@
     <ClInclude Include="jumping.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hammmering.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shovelling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="swordmanship.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp">
@@ -39,6 +51,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hammmering.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shovelling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="swordmanship.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

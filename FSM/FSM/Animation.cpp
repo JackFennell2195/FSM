@@ -1,4 +1,5 @@
 #include "Animation.h"
+#include "idle.h"
 
 Animation::Animation()
 {

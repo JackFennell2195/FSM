@@ -8,7 +8,22 @@
 	Game::Game()
 		: m_window(sf::VideoMode(800,800),"FSM Life",sf::Style::Default)
 	{
+		
+		if (!m_currentTexture.loadFromFile("resources\\IMAGES\\idle.png"))///FSM/resources/IMAGES/SpinHammer.png
+		{
+			std::string s("Error loading texture");
+			throw std::exception(s.c_str());
+		}
+		
+
+		if (!m_hammerTime.loadFromFile("resources\\IMAGES\\SpinHammer.png"))///FSM/resources/IMAGES/SpinHammer.png
+		{
+			std::string s("Error loading texture");
+			throw std::exception(s.c_str());
+		}
+		
 	}
+	
 
 	void Game::run()
 	{
@@ -36,11 +51,17 @@
 
 	void Game::update(double dt)
 	{
-	}
 
+	}
+	void Game::setCurrentSprite()
+	{
+		m_Sprite.setPosition(200, 200);
+		
+	}
 	void Game::render()
 	{
-		m_window.clear(sf::Color(0, 0, 0, 0));
+		m_window.clear(sf::Color::White);
+		m_window.draw(m_Sprite);
 		m_window.display();
 	}
 
@@ -54,33 +75,48 @@
 				{
 					m_window.close();
 				}
-				if (event.type == sf::Event::KeyPressed)
-					{
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-						{
-							fsm.jumping();
-						}
-
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-						{
-							fsm.swordmanship();
-						}
-
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-						{
-							fsm.shovelling();
-						}
-	
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-						{
-							fsm.hammering();
-						}
-					}
-				processGameEvents(event);
+					processGameEvents(event);
 			}
 
 	}
 
-	void Game::processGameEvents(sf::Event &)
+	
+
+	void Game::processGameEvents(sf::Event & event)
 	{
+		if (sf::Event::KeyPressed== event.type)
+			{
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Escape:
+				m_window.close();
+				break;
+
+				case sf::Keyboard::Up:
+				fsm.jumping();
+				
+				break;
+				
+				case sf::Keyboard::Down:
+				fsm.swordmanship();
+				
+				break;
+
+				case sf::Keyboard::Left:
+				fsm.shovelling();
+				
+				break;
+
+				case sf::Keyboard::Right:
+				fsm.hammering();
+				m_Sprite.setTexture(m_hammerTime);
+				
+				break;
+
+				default:
+					break;
+				
+				}
+			}
+		
 	}

@@ -1,9 +1,9 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Animation.h"
-
-
-
+#include <string>
+#include <chrono>
+#include <thread>
 class Game
 {
 public: 
@@ -12,23 +12,20 @@ public:
 	void update(double dt);
 	void render();
 	void processEvents();
-	void setCurrentSprite();
 	void processGameEvents(sf::Event&);
+	void idleTexture();
+	void setUpTextFont();
 	sf::RenderWindow m_window;
-	enum CurrentState
-	{
-		IDLE,
-		JUMP,
-		HAMMER,
-		SHOVEL,
-		SWORD
-	};
+	
 private:
+	bool actionTaken;
 	sf::Sprite m_Sprite;
+	sf::Font m_ArialBlackfont;
 	sf::Texture m_currentTexture;
 	sf::Texture m_hammerTime;
 	sf::Texture m_jumpAround;
 	sf::Texture m_swordPlay;
 	sf::Texture m_shovelling;
+	sf::Text m_controls;
 	
 };

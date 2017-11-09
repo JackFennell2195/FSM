@@ -1,4 +1,8 @@
+//@author Jack Fennell 
+//@date 3/11/17
+//C00220386
 #pragma once
+
 #include <SFML\Graphics.hpp>
 #include "Animation.h"
 #include <string>

@@ -1,4 +1,6 @@
-
+//@author Jack Fennell 
+//@date 3/11/17
+//C00220386
 #ifdef _DEBUG 
 #pragma comment(lib,"sfml-graphics-d.lib") 
 #pragma comment(lib,"sfml-audio-d.lib") 
